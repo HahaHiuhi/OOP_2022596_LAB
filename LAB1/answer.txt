@@ -1,1 +1,7 @@
+LAB1
+Pham Duc Ngu Binh - 20225696
 java version: javac 1.8.0_421
+Q1: When the user chooses "Cancel", the message is the same as when choosing "No" .
+Q2: Instead of using showConfirmDialog() method of JOptionPane class, the right method will be showOptionDialog() of the same class. 
+    An array of available options should be created to easily store the options and pass them to the method.
+    A version of the choices "I do" and "I don't" has the directory : LAB1/6.1/ChoosingOption2.java
