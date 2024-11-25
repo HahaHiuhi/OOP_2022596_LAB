@@ -1,0 +1,7 @@
+In swap: Java passes the object references by value. 
+Changing the local variables (o1 and o2) inside swap does not affect the original references (jungleDVD and cinderellaDVD) 
+because only the local copies of the references are modified, not the original references themselves.
+
+In changeTitle: The dvd reference in the changeTitle method points to the same object as jungleDVD, 
+so changes to the properties of dvd (like calling dvd.setTitle) modify the same object that jungleDVD points to. 
+However, creating a new DVD with new DVD(oldTitle) only affects the local dvd reference inside changeTitle and does not change the reference of jungleDVD in main.
