@@ -1,0 +1,42 @@
+Q1: The Comparable interface should be implemented in the Media class or its subclasses
+
+Q2: Example of Ordering by title, then cost in Media class:
+@Override
+public int compareTo(Media other) {
+
+    int titleComparison = this.title.compareTo(other.title);
+    if (titleComparison != 0) {
+        return titleComparison; // If titles are different, return the result of title comparison
+    }
+    
+   
+    return Float.compare(this.cost, other.cost);
+}
+
+Q3: No, the Comparable interface allows only one natural ordering.
+
+Q4: In DVD class:
+@Override
+public int compareTo(Media other) {
+    if (other instanceof DVD) {
+        DVD otherDVD = (DVD) other;
+        
+        // First, compare by title
+        int titleComparison = this.title.compareTo(otherDVD.title);
+        if (titleComparison != 0) {
+            return titleComparison;
+        }
+
+        // If titles are the same, compare by length (decreasing order)
+        int lengthComparison = Integer.compare(otherDVD.getLength(), this.getLength()); 
+        if (lengthComparison != 0) {
+            return lengthComparison;
+        }
+
+        
+        return Float.compare(this.cost, otherDVD.cost);
+    }
+
+  
+    return super.compareTo(other);
+}
